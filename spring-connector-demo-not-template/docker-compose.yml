@@ -1,0 +1,50 @@
+version: '3'
+ 
+services:
+  database:
+    image: mysql:8
+    container_name: database
+    environment:
+      MYSQL_ROOT_PASSWORD: Law13oufa 
+      MYSQL_DATABASE: employee_directory
+      MYSQL_USER: springstudent
+      MYSQL_PASSWORD: springstudent
+    ports:
+      - 3310:3306
+    volumes:
+        # connect database volume with docker inside 
+        -  database-data:/var/lib/mysql
+    networks:
+     - backendNetwork
+      
+  springapi:
+    image: employee-api
+    container_name: springapi
+    environment: 
+        SPRING_DATASOURCE_URL: jdbc:mysql://database/employee_directory
+        SPRING_DATASOURCE_USERNAME: springstudent
+        SPRING_DATASOURCE_PASSWORD: springstudent 
+    ports:
+      - 8080:8080
+    depends_on:
+      - database
+    networks:
+      - backendNetwork
+      - frontendNetwork
+       
+  angular:
+    image: employee-ui
+    container_name: angular
+    ports: 
+      - 80:80
+    depends_on:
+      - springapi
+    networks:
+      - frontendNetwork
+
+volumes:
+   database-data:
+
+networks:
+  backendNetwork:
+  frontendNetwork:

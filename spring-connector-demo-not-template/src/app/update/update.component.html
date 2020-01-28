@@ -1,0 +1,17 @@
+<h3>PUT</h3>
+
+<form [formGroup]="updateEmployeeForm" (ngSubmit)="updateEmployeeSubmit(updateEmployeeForm.value)">
+
+    <div>
+        <input id="email" type="text" placeholder="Enter your email" formControlName="email" required>
+    </div>
+    <div>
+        <input id="firstName" type="text" placeholder="Enter your firstName" formControlName="firstName" required>
+    </div>
+
+    <div>
+        <input id="lastName" type="text" placeholder="Enter your lastName" formControlName="lastName" required>
+    </div>
+
+    <button class="button" type="submit">Update</button>
+</form>

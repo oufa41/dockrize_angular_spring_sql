@@ -1,0 +1,32 @@
+
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+ button {
+    background-color: #33D1FF;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.login{
+    display: flex;   
+}
+.webSpace{
+    display: flex;
+}
+.emptySpace{
+    flex: 0 0 30%;
+}
+.formSpace{
+    flex: 0 0 40%;
+}

@@ -1,0 +1,18 @@
+<div class="webSpace"> 
+    <div class="emptySpace"></div>
+    <div class="formSpace">
+        <form  [formGroup]="userCredintalsForm"   (ngSubmit)="onLoginSubmit()">
+
+            <div>
+                <input id = "email" type="text" placeholder="Enter Email" formControlName="email" required>
+            </div>
+        
+            <div>
+                <input id = "password" type="password" placeholder="Enter Password" formControlName="password" required>
+            </div>
+            <button  class="button" type="submit" >Login</button>
+        </form>
+    </div>
+
+<div class="emptySpace"></div>
+</div>

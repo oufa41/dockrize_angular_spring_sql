@@ -1,0 +1,17 @@
+input[type=text], [type=number] {
+
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    
+  }
+  
+ button {
+    background-color: #33D1FF;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+ }

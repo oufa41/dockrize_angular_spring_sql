@@ -1,0 +1,45 @@
+<h3>GET Operation</h3>
+<div style="display: flex;">
+    <!-- Left content -->
+    <div style="flex: 1;">
+      
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Edit</th>
+            </tr>
+            <tr *ngFor="let employee of allEmployees">
+                <td>{{ employee.id }}</td>
+                <td>{{ employee.email }}</td>
+                <td>{{ employee.firstName }}</td>
+                <td>{{ employee.lastName }}</td>
+                <td><button class="button" (click)="updateEmployee(employee.id)">Edit</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Right content -->
+    <div style="flex: 1;">
+        <form [formGroup]="employeeDataByIDForm">
+
+            <div>
+                <input id="employeeId" type="number" placeholder="Enter employeeId" formControlName="employeeId" required="true">
+            </div>
+        
+        
+            <button class="button" (click)="getEmployeeIdSubmit()">Get Employee</button>
+        </form>
+        
+        
+        <ul class="list-group"   *ngIf="employee">
+        
+            <div class="listSpace"></div>
+            <div class="emailSpace">Email: {{employee.email}}</div>
+            <div class="firstNameSpace">FirstName: {{employee.firstName}}</div>
+            <div class="lastNameSpace">LastName: {{employee.lastName}}</div>
+        </ul>
+    </div>
+</div>
